@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ytstyle.css">
+    <title>Get in touch</title>
+</head>
+<body>
+    <nav class="backcolor">
+        <div class="container-new main-nav flex">
+            <a href="" class="text-section"><i class="fa-solid fa-user" style="color: #ffffff;"></i> Siddhi_here
+            </a>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="img-section">
+            <img src="contactme.png" alt="">
+        </div>
+        <form onsubmit="sendEmail()" reset(); return false;>
+            <h3>GET IN TOUCH</h3>
+            <input type="text" id="name" placeholder="Your Name" required>
+            <input type="email" id="email" placeholder="Email id" required>
+            <input type="text" id="phone" placeholder="Contact no." required>
+            <textarea id="message" rows="4" placeholder="Write your message"></textarea>
+            <button type="Submit">Submit</button>
+        </form>
+
+         <script src=" https://smtpjs.com/v3/smtp.js"></script>
+        <script>
+            function sendEmail(){
+                Email.send({
+                    Host : "smtp.gmail.com",
+                    Username : "2021.siddhi.bhogale@ves.ac.in",
+                    Password : "",
+                    To : 'bhogalesiddhi640@gmail.com',
+                    From : document.getElementById("email").value,
+                    Subject : "New contact form enquiry",
+                    Body : "And this is the body"
+                }).then(
+                  message => alert(message)
+                );
+
+            }
+        </script>
+        <script src="https://kit.fontawesome.com/5b347c26d8.js" crossorigin="anonymous"></script>
+    </div>
+</body>
+</html>
